@@ -472,6 +472,7 @@ GameObject:
   - component: {fileID: 660843205}
   - component: {fileID: 660843206}
   - component: {fileID: 660843202}
+  - component: {fileID: 660843207}
   m_Layer: 8
   m_Name: Bird
   m_TagString: Untagged
@@ -591,6 +592,18 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1.27, y: 1.03}
   m_Direction: 0
+--- !u!114 &660843207
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660843201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f570609df451a24ba09e9c534fb4e2f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &734091812
 GameObject:
   m_ObjectHideFlags: 0
@@ -2682,6 +2695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2090409028}
   - component: {fileID: 2090409027}
+  - component: {fileID: 2090409029}
   m_Layer: 0
   m_Name: Managers
   m_TagString: Untagged
@@ -2717,6 +2731,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2090409029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090409026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f00fa67dd9e5645ab39582982f9684, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  coinParticles: {fileID: 7715457940933861194, guid: 07a6a6e1be76d254abe02afdd95ae4ea,
+    type: 3}
 --- !u!1001 &6637305577618803364
 PrefabInstance:
   m_ObjectHideFlags: 0
