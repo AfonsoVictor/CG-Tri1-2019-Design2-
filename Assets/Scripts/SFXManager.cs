@@ -5,6 +5,7 @@ using UnityEngine;
 public class SFXManager : MonoBehaviour
 {
     public GameObject coinParticles;
+    public GameObject DieParticles;
     public static SFXManager instance = null;
     void Awake() {
         if (instance == null) {
@@ -13,6 +14,12 @@ public class SFXManager : MonoBehaviour
     }
     public void ShowCoinParticles(GameObject obj) {
         GameObject particles = Instantiate(coinParticles, obj.transform.position, Quaternion.identity);
+        GameObject tape = GameObject.Find("Tape");
+        particles.transform.SetParent(tape.transform);
+    }
+
+    public void ShowDieParticles(GameObject obj) {
+        GameObject particles = Instantiate(DieParticles, obj.transform.position, Quaternion.identity);
         GameObject tape = GameObject.Find("Tape");
         particles.transform.SetParent(tape.transform);
     }

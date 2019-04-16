@@ -672,6 +672,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4458146352568669663, guid: 2a8f6209732ff39448f28319fb960d07,
+        type: 3}
+      propertyPath: projectileSpeed
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2a8f6209732ff39448f28319fb960d07, type: 3}
 --- !u!4 &329035057 stripped
@@ -6936,6 +6941,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinParticles: {fileID: 7715457940933861194, guid: 07a6a6e1be76d254abe02afdd95ae4ea,
+    type: 3}
+  DieParticles: {fileID: 2921479679385853247, guid: b21ef0bc6eac12e45b135c35e1d10d51,
     type: 3}
 --- !u!114 &2090409030
 MonoBehaviour:
