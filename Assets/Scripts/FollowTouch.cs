@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowTouch : MonoBehaviour
 {
-    public float lerpRate = 4f;
+    public float lerpRate = 7f;
 
     // Update is called once per frame
     void Update()

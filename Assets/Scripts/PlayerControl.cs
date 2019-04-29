@@ -16,12 +16,12 @@ public class PlayerControl : MonoBehaviour
             AudioManager.instance.PlaySoundCoinPickup(other.gameObject);
             Destroy(other.gameObject);
             LevelManager.instance.IncrementCoinCount();
-            Impulse(10);
+            Impulse(11);
         }
         if (other.gameObject.CompareTag("Gift")) {
             StopMusicAndTape();
             AudioManager.instance.PlaySoundLevelComplete(gameObject);
-            Destroy(gameObject);
+            DestroyPlayer();
             LevelManager.instance.ShowLevelCompletePanel();
         }
         else if (other.gameObject.layer == LayerMask.NameToLayer("Enemies")) {
@@ -40,11 +40,15 @@ public class PlayerControl : MonoBehaviour
         StopMusicAndTape();
         AudioManager.instance.PlaySoundFail(gameObject);
         SFXManager.instance.ShowDieParticles(gameObject);
-        Destroy(gameObject);
+        DestroyPlayer();
         LevelManager.instance.ShowGameOverPanel();
     }
     void Impulse(float force) {
         rb.velocity = Vector3.zero;
         rb.AddForce(Vector3.up * force, ForceMode2D.Impulse);
+    }
+    void DestroyPlayer(){
+        Camera.main.GetComponent<CameraFollow>().TurnOff();
+        Destroy(gameObject);
     }
 }
