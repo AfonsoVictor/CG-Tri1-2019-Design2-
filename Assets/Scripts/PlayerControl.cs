@@ -5,9 +5,18 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     Rigidbody2D rb; 
+    Animator anim;
+    public float FallLimit = 1f;
 
     void Start () {
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+    }
+
+    void Update () {
+        if (rb.velocity.y < FallLimit){
+            anim.SetInteger("State", 0);
+        }
     }
     
     void OnTriggerEnter2D(Collider2D other) {
@@ -16,7 +25,7 @@ public class PlayerControl : MonoBehaviour
             AudioManager.instance.PlaySoundCoinPickup(other.gameObject);
             Destroy(other.gameObject);
             LevelManager.instance.IncrementCoinCount();
-            Impulse(11);
+            Impulse(12);
         }
         if (other.gameObject.CompareTag("Gift")) {
             StopMusicAndTape();
@@ -46,6 +55,7 @@ public class PlayerControl : MonoBehaviour
     void Impulse(float force) {
         rb.velocity = Vector3.zero;
         rb.AddForce(Vector3.up * force, ForceMode2D.Impulse);
+        anim.SetInteger("State", 1);
     }
     void DestroyPlayer(){
         Camera.main.GetComponent<CameraFollow>().TurnOff();
